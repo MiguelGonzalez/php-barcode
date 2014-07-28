@@ -18,7 +18,7 @@ class Barcode {
         $this->scale = $scale;
         $this->encoding = $encoding;
 
-        $encoding_class = 'lib/' . strtolower($encoding) . '.php';
+        $encoding_class = dirname(__FILE__) . '/lib/' . strtolower($encoding) . '.php';
 
         if(file_exists($encoding_class)) {
             include_once($encoding_class);
